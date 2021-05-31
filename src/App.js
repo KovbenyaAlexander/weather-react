@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import reverseGeocoding from "./redux/actions/thunk/reverseGeocoding";
 import { useEffect } from "react";
+import Form from "./Components/Form/Form";
 
 function App({ userLocation, reverseGeocoding, showLoader }) {
   useEffect(() => {
@@ -13,6 +14,8 @@ function App({ userLocation, reverseGeocoding, showLoader }) {
     <div className="App">
       <header className="App-header">{userLocation}</header>
       <p>{showLoader ? "Loading..." : null}</p>
+      <hr />
+      <Form />
     </div>
   );
 }
