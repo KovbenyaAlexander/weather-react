@@ -3,7 +3,8 @@ import {
   SHOW_LOADER,
   HIDE_LOADER,
   SEARCH_TEXT_CHANGE,
-  SET_COORDS_FOR_LOOKING_CITY,
+  SET_COORDS_FOR_CITY,
+  SET_WEATHER_INFO,
 } from "./actionsTypes";
 
 export function set_user_location(location) {
@@ -34,7 +35,14 @@ export function searchTextChange(text) {
 
 export function setCoordsForCity(lat, lng) {
   return {
-    type: SET_COORDS_FOR_LOOKING_CITY,
+    type: SET_COORDS_FOR_CITY,
     payload: { lat, lng },
+  };
+}
+
+export function setWeather(data) {
+  return {
+    type: SET_WEATHER_INFO,
+    payload: data,
   };
 }

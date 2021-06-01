@@ -3,34 +3,42 @@ import {
   SHOW_LOADER,
   HIDE_LOADER,
   SEARCH_TEXT_CHANGE,
-  SET_COORDS_FOR_LOOKING_CITY,
+  SET_COORDS_FOR_CITY,
+  SET_WEATHER_INFO,
 } from "./actions/actionsTypes";
 
 const initialState = {
-  searchText: "",
-  showLoader: true,
-  userLocation: "",
-  coordsForLookingCity: null,
+  searchText: "gomel",
+  isShowLoader: true,
+  location: "",
+  coordsForCity: null,
+  weatherInfo: null,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case SET_USER_LOCATION:
-      return { ...state, userLocation: action.payload };
+      return { ...state, location: action.payload };
 
     case SHOW_LOADER:
-      return { ...state, showLoader: true };
+      return { ...state, isShowLoader: true };
 
     case HIDE_LOADER:
-      return { ...state, showLoader: false };
+      return { ...state, isShowLoader: false };
 
     case SEARCH_TEXT_CHANGE:
       return { ...state, searchText: action.payload };
 
-    case SET_COORDS_FOR_LOOKING_CITY:
+    case SET_COORDS_FOR_CITY:
       return {
         ...state,
-        coordsForLookingCity: { ...action.payload },
+        coordsForCity: { ...action.payload },
+      };
+
+    case SET_WEATHER_INFO:
+      return {
+        ...state,
+        weatherInfo: action.payload,
       };
 
     default:
