@@ -1,5 +1,4 @@
 import {
-  SET_USER_LOCATION,
   SHOW_LOADER,
   HIDE_LOADER,
   SEARCH_TEXT_CHANGE,
@@ -10,16 +9,13 @@ import {
 const initialState = {
   searchText: "gomel",
   isShowLoader: true,
-  location: "",
   coordsForCity: null,
   weatherInfo: null,
+  coords: { lat: null, lng: null },
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case SET_USER_LOCATION:
-      return { ...state, location: action.payload };
-
     case SHOW_LOADER:
       return { ...state, isShowLoader: true };
 
@@ -39,6 +35,10 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         weatherInfo: action.payload,
+        coords: {
+          lat: action.payload.location.lat,
+          lng: action.payload.location.lon,
+        },
       };
 
     default:

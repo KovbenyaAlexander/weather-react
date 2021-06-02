@@ -9,12 +9,12 @@ function WeatherContainer({ weatherInfo }) {
 
   return (
     <div>
-      Weather
       <hr />
       {weatherInfo ? weatherInfo.location.country : null}
       {weatherInfo ? weatherInfo.location.name : null}
       {weatherInfo ? weatherInfo.location.country : null}
       {weatherInfo ? weatherInfo.location.region : null}
+      <hr />
     </div>
   );
 }

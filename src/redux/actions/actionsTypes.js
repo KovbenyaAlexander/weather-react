@@ -1,4 +1,3 @@
-export const SET_USER_LOCATION = "SET_USER_LOCATION";
 export const SHOW_LOADER = "SHOW_LOADER";
 export const HIDE_LOADER = "HIDE_LOADER";
 export const SEARCH_TEXT_CHANGE = "SEARCH_TEXT_CHANGE";

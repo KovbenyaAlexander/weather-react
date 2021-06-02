@@ -1,18 +1,10 @@
 import {
-  SET_USER_LOCATION,
   SHOW_LOADER,
   HIDE_LOADER,
   SEARCH_TEXT_CHANGE,
   SET_COORDS_FOR_CITY,
   SET_WEATHER_INFO,
 } from "./actionsTypes";
-
-export function set_user_location(location) {
-  return {
-    type: SET_USER_LOCATION,
-    payload: location,
-  };
-}
 
 export function show_loader() {
   return {
