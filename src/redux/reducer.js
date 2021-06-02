@@ -9,7 +9,6 @@ import {
 const initialState = {
   searchText: "gomel",
   isShowLoader: true,
-  coordsForCity: null,
   weatherInfo: null,
   coords: { lat: null, lng: null },
 };
@@ -28,7 +27,7 @@ export default function reducer(state = initialState, action) {
     case SET_COORDS_FOR_CITY:
       return {
         ...state,
-        coordsForCity: { ...action.payload },
+        coords: { ...action.payload },
       };
 
     case SET_WEATHER_INFO:

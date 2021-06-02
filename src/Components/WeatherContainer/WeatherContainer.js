@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 function WeatherContainer({ weatherInfo }) {
-  console.log(weatherInfo);
+  // console.log(weatherInfo);
 
   if (!weatherInfo) {
     return <p>Loading...</p>;
