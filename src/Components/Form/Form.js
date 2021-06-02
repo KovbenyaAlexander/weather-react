@@ -1,11 +1,13 @@
 import { searchTextChange } from "../../redux/actions/actions";
 import { connect } from "react-redux";
 import getCoordinatsByCityName from "../../redux/actions/thunk/getCoordinatsByCityName";
+import getWeatherInfo from "../../redux/actions/thunk/getWeatherInfo";
 
-function Form({ searchText, searchTextChange, getCoordinatsByCityName }) {
+function Form({ searchText, searchTextChange, getWeatherInfo }) {
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    getCoordinatsByCityName(searchText);
+    // getCoordinatsByCityName(searchText);
+    getWeatherInfo();
   };
 
   const searchTextChangeHandler = (e) => {
@@ -40,6 +42,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     getCoordinatsByCityName: (searchText) => {
       dispatch(getCoordinatsByCityName(searchText));
+    },
+    getWeatherInfo: () => {
+      dispatch(getWeatherInfo());
     },
   };
 };
