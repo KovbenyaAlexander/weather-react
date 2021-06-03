@@ -11,18 +11,28 @@ To solve this problem i use getting coordinates by city name.
 From the coordinates i get the weather.
 
 */
+
 const getWeatherInfo = (lat, lng) => {
   return (dispatch, getState) => {
     if (!lat && !lng) {
+      dispatch(show_loader());
       const cityName = getState().searchText;
       const URL = `https://api.opencagedata.com/geocode/v1/json?q=${cityName}&key=99ecf60eb3944fd69770b5c974614a6a`;
       axios.get(URL).then((resp) => {
-        const data = resp.data;
-        lat = data.results[0].geometry.lat;
-        lng = data.results[0].geometry.lng;
+        const data = resp.data.results;
+
+        if (data.length === 0) {
+          alert("Data non found!"); // TODO: Create a message wich contains the error
+          return;
+        }
+
+        lat = data[0].geometry.lat;
+        lng = data[0].geometry.lng;
+
         getWeatherDataByCoords();
       });
 
+      dispatch(hide_loader());
       return;
     }
 

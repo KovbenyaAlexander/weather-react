@@ -4,6 +4,7 @@ import {
   SEARCH_TEXT_CHANGE,
   SET_COORDS_FOR_CITY,
   SET_WEATHER_INFO,
+  SET_GEOLOCATION_STATUS,
 } from "./actions/actionsTypes";
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
   isShowLoader: true,
   weatherInfo: null,
   coords: { lat: null, lng: null },
+  iaGeoLocationAllowed: false,
 };
 
 export default function reducer(state = initialState, action) {
@@ -38,6 +40,12 @@ export default function reducer(state = initialState, action) {
           lat: action.payload.location.lat,
           lng: action.payload.location.lon,
         },
+      };
+
+    case SET_GEOLOCATION_STATUS:
+      return {
+        ...state,
+        iaGeoLocationAllowed: action.payload,
       };
 
     default:

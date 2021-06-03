@@ -4,6 +4,7 @@ import {
   SEARCH_TEXT_CHANGE,
   SET_COORDS_FOR_CITY,
   SET_WEATHER_INFO,
+  SET_GEOLOCATION_STATUS,
 } from "./actionsTypes";
 
 export function show_loader() {
@@ -36,5 +37,11 @@ export function setWeather(data) {
   return {
     type: SET_WEATHER_INFO,
     payload: data,
+  };
+}
+export function setGeolocationStatus(status) {
+  return {
+    type: SET_GEOLOCATION_STATUS,
+    payload: status,
   };
 }
