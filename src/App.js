@@ -8,6 +8,7 @@ import {
 } from "./redux/actions/actions";
 import WeatherContainer from "./Components/WeatherContainer/WeatherContainer";
 import Map from "./Components/Map/Map";
+import Chart_ from "./Components/Chart/Chart";
 
 function App({
   isShowLoader,
@@ -38,6 +39,7 @@ function App({
       <Form />
       <WeatherContainer />
       <Map />
+      <Chart_ />
     </div>
   );
 }
