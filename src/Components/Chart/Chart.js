@@ -29,7 +29,7 @@ function Chart({ weatherInfo }) {
         XAxis: hour,
       });
     }
-    if (hour == currentHour) {
+    if (hour === currentHour) {
       data.push({
         name: hour,
         pastHours: item.temp_c,
@@ -45,13 +45,6 @@ function Chart({ weatherInfo }) {
       });
     }
   });
-
-  const item = weatherInfo.forecast.forecastday[1].hour;
-  for (let i = 0; i < item.length; i++) {
-    const hour = new Date(item[i].time).getHours();
-  }
-
-  console.log(data);
 
   return (
     <LineChart

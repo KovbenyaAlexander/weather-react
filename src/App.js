@@ -9,6 +9,9 @@ import {
 import WeatherContainer from "./Components/WeatherContainer/WeatherContainer";
 import Map from "./Components/Map/Map";
 import Chart from "./Components/Chart/Chart";
+import "./index.css";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
 
 function App({
   isShowLoader,
@@ -32,14 +35,16 @@ function App({
 
   return (
     <div className="App">
+      <Header />
       <p>{isShowLoader ? "Loading..." : null}</p>
-      <hr />
       {iaGeoLocationAllowed ? "allow" : "deny"}
-      <hr />
-      <Form />
-      <WeatherContainer />
-      <Map />
-      <Chart />
+      <section className="weatherInfo-wrapper">
+        <Form />
+        <WeatherContainer />
+        <Map />
+        <Chart />
+      </section>
+      <Footer />
     </div>
   );
 }
