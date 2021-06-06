@@ -9,7 +9,7 @@ import {
 import WeatherContainer from "./Components/WeatherContainer/WeatherContainer";
 import Map from "./Components/Map/Map";
 import Chart from "./Components/Chart/Chart";
-import "./index.css";
+import "./App.css";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 
@@ -37,7 +37,7 @@ function App({
     <div className="App">
       <Header />
       <p>{isShowLoader ? "Loading..." : null}</p>
-      {iaGeoLocationAllowed ? "allow" : "deny"}
+      {/* {iaGeoLocationAllowed ? "allow" : "deny"} */}
       <section className="weatherInfo-wrapper">
         <Form />
         <WeatherContainer />

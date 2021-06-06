@@ -8,7 +8,7 @@ import {
 } from "./actions/actionsTypes";
 
 const initialState = {
-  searchText: "gomel",
+  searchText: "",
   isShowLoader: true,
   weatherInfo: null,
   coords: { lat: null, lng: null },
@@ -24,7 +24,7 @@ export default function reducer(state = initialState, action) {
       return { ...state, isShowLoader: false };
 
     case SEARCH_TEXT_CHANGE:
-      return { ...state, searchText: action.payload };
+      return { ...state, searchText: action.payload.toUpperCase() };
 
     case SET_COORDS_FOR_CITY:
       return {
@@ -40,6 +40,7 @@ export default function reducer(state = initialState, action) {
           lat: action.payload.location.lat,
           lng: action.payload.location.lon,
         },
+        // searchText: "",
       };
 
     case SET_GEOLOCATION_STATUS:

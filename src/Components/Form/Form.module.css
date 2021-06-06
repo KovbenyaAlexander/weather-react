@@ -1,0 +1,21 @@
+.formWrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-end; */
+}
+
+.input {
+  color: white;
+  margin: 0px;
+  font-family: "Raleway", sans-serif;
+}
+
+.btnSubmit {
+  margin-top: 25px;
+}
+
+.inputWrapper {
+  width: 300px;
+}
