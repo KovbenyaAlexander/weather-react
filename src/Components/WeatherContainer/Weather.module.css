@@ -1,0 +1,12 @@
+.weatherContainerItem {
+  width: 80%;
+  margin: 0 auto;
+  background-color: black;
+}
+
+@media screen and (max-width: 800px) {
+  .weatherContainerItem {
+    width: 100%;
+    margin: 5px;
+  }
+}

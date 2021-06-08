@@ -17,15 +17,6 @@ function Form({ searchText, searchTextChange, getWeatherInfo }) {
 
   return (
     <form className={css.formWrapper} onSubmit={(e) => onSubmitHandler(e)}>
-      {/* <input
-        placeholder="Search"
-        id="input"
-        value={searchText}
-        onChange={searchTextChangeHandler}
-        type="text"
-        className={css.input}
-      /> */}
-
       <div className={`input-field col s6 ${css.inputWrapper} `}>
         <input
           autoComplete="off"
@@ -43,19 +34,7 @@ function Form({ searchText, searchTextChange, getWeatherInfo }) {
       >
         <i className={`material-icons prefix search-icon`}>search</i>
       </button>
-
       <hr />
-      {/* <>
-        <form onSubmit={onSubmitHandler}>
-          <div className={`input-field col s12 `}>
-            <input id="input" type="text" className="validate" />
-            <label htmlFor="input"> Enter movie name:</label>
-            <button className={`waves-effect btn waves-light btn-small }`}>
-              <i className={`material-icons prefix search-icon }`}>search</i>
-            </button>
-          </div>
-        </form>
-      </> */}
     </form>
   );
 }

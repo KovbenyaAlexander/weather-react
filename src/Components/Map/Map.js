@@ -11,7 +11,7 @@ const MapContainer = ({ lat, lng }) => {
   return (
     <YMaps>
       <Map
-        defaultState={{ center: [55.75, 37.57], zoom: 10, fillColor: "grey" }}
+        // defaultState={{ center: [55.75, 37.57], zoom: 10, fillColor: "grey" }}
         state={{ center: coords, zoom: 10, fillColor: "grey" }}
       />
     </YMaps>
