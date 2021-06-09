@@ -34,7 +34,6 @@ function Form({ searchText, searchTextChange, getWeatherInfo }) {
       >
         <i className={`material-icons prefix search-icon`}>search</i>
       </button>
-      <hr />
     </form>
   );
 }
